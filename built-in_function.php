@@ -578,12 +578,16 @@ $isSet = isset($variable); // null이 아니고 설정되어 있으면 true
 var_dump($variable); // 타입과 값을 자세히 출력
 
 /**
- * 배열이나 객체의 요소 개수 반환
- * @param array|Countable $value 카운트할 변수
- * @param int $mode 카운트 모드
+ * 배열의 요소 개수(키 개수) 반환
+ * @param array|Countable $value 카운트할 배열
+ * @param int $mode 카운트 모드 (COUNT_NORMAL 또는 COUNT_RECURSIVE)
  * @return int 요소 개수
  */
-$count = count([1, 2, 3, 4]); // 4
+$array = ['apple', 'banana', 'orange'];
+$count = count($array); // 3
+
+$assoc = ['name' => 'John', 'age' => 30, 'city' => 'Seoul'];
+$count = count($assoc); // 3
 
 /**
  * 배열에 특정 값이 있는지 확인
